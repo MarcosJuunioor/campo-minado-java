@@ -255,6 +255,64 @@ public class Tabuleiro {
                         if (contadorNumBombas != 0) {
                             celAtual.setConteudoCelula(this.getNumeroBombasEnum(contadorNumBombas));
                         }
+                    } else if (l == 1 && c > 1 && c < numColunas) {
+                        String embaixo = "l" + (l + 1) + "c" + c;
+                        String direita = "l" + l + "c" + (c + 1);
+                        String esquerda = "l" + l + "c" + (c - 1);
+                        String diagonalInferiorDireita = "l" + (l + 1) + "c" + (c + 1);
+                        String diagonalInferiorEsquerda = "l" + (l + 1) + "c" + (c - 1);
+
+                        if (this.temBomba(embaixo)) {
+                            contadorNumBombas++;
+                        }
+
+                        if (this.temBomba(direita)) {
+                            contadorNumBombas++;
+                        }
+
+                        if (this.temBomba(esquerda)) {
+                            contadorNumBombas++;
+                        }
+
+                        if (this.temBomba(diagonalInferiorDireita)) {
+                            contadorNumBombas++;
+                        }
+                        if (this.temBomba(diagonalInferiorEsquerda)) {
+                            contadorNumBombas++;
+                        }
+                        if (contadorNumBombas != 0) {
+                            celAtual.setConteudoCelula(this.getNumeroBombasEnum(contadorNumBombas));
+                        }
+
+                    } else if (l == numLinhas && c > 1 && c < numColunas) {
+                        String emCima = "l" + (l - 1) + "c" + c;
+                        String direita = "l" + l + "c" + (c + 1);
+                        String esquerda = "l" + l + "c" + (c - 1);
+                        String diagonalSuperiorDireita = "l" + (l - 1) + "c" + (c + 1);
+                        String diagonalSuperiorEsquerda = "l" + (l - 1) + "c" + (c - 1);
+
+                        if (this.temBomba(emCima)) {
+                            contadorNumBombas++;
+                        }
+
+                        if (this.temBomba(direita)) {
+                            contadorNumBombas++;
+                        }
+
+                        if (this.temBomba(esquerda)) {
+                            contadorNumBombas++;
+                        }
+
+                        if (this.temBomba(diagonalSuperiorDireita)) {
+                            contadorNumBombas++;
+                        }
+                        if (this.temBomba(diagonalSuperiorEsquerda)) {
+                            contadorNumBombas++;
+                        }
+
+                        if (contadorNumBombas != 0) {
+                            celAtual.setConteudoCelula(this.getNumeroBombasEnum(contadorNumBombas));
+                        }
                     }
                 }
             }
